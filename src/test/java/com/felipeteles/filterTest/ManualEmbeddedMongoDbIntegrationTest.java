@@ -19,17 +19,17 @@ import de.flapdoodle.embed.mongo.config.Net;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 
-class ManualEmbeddedMongoDbIntegrationTest {
+public class ManualEmbeddedMongoDbIntegrationTest {
     private MongodExecutable mongodExecutable;
     private MongoTemplate mongoTemplate;
 
     @After
-    void clean() {
+    public void clean() {
         mongodExecutable.stop();
     }
 
     @Before
-    void setup() throws Exception {
+    public void setup() throws Exception {
         String ip = "localhost";
         int port = 27017;
 
@@ -44,7 +44,7 @@ class ManualEmbeddedMongoDbIntegrationTest {
     }
 
     @Test
-    void test() throws Exception {
+    public void test() throws Exception {
         // given
         DBObject objectToSave = BasicDBObjectBuilder.start()
             .add("key", "value")

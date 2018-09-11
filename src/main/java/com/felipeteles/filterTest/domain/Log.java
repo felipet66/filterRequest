@@ -10,7 +10,7 @@ public class Log implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String id;
+	private Long id;
 	
 	private String content;
 	
@@ -18,7 +18,7 @@ public class Log implements Serializable{
 	
 	private String date;
 	
-	public Log(String id, String content, String headers, String date) {
+	public Log(Long id, String content, String headers, String date) {
 		super();
 		this.id = id;
 		this.content = content;
@@ -26,11 +26,11 @@ public class Log implements Serializable{
 		this.date = date;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -82,4 +82,5 @@ public class Log implements Serializable{
 			return false;
 		return true;
 	}
+
 }
